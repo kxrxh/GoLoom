@@ -9,7 +9,11 @@ It's a simple golang library, which provide different collections and useful fun
 - Ordered Set
 - Stack
 - Ordered Map
-
+- Counter
 
 ### Types:
 - Result
+
+
+### Functions:
+- Retry 
