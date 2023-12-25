@@ -1,6 +1,4 @@
-// orderedset_test.go
-
-package datatypes
+package collections
 
 import (
 	"reflect"

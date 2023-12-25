@@ -1,4 +1,4 @@
-package datatypes
+package collections
 
 import "sort"
 

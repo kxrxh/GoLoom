@@ -1,4 +1,4 @@
-package datatypes
+package collections
 
 
 // RemoveElement removes the first occurrence of an element from a slice.

@@ -1,5 +1,6 @@
 # GoLoom
-It's a simple golang library, which provide different collections and usefull functions.
+It's a simple golang library, which provide different collections and useful functions.
+
 **Basically, I wrote it for myself, but if you want, you can use it too.**
 
 ## What has already been done:
@@ -7,4 +8,8 @@ It's a simple golang library, which provide different collections and usefull fu
 - Set
 - Ordered Set
 - Stack
+- Ordered Map
 
+
+### Types:
+- Result

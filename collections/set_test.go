@@ -1,4 +1,4 @@
-package datatypes
+package collections
 
 import (
 	"testing"
@@ -8,24 +8,24 @@ func TestSet_Add(t *testing.T) {
 	s := NewSet[int]()
 	s.Add(1, 2, 3)
 
-	expected := NewSet[int](1, 2, 3)
+	expected := NewSet(1, 2, 3)
 	if !s.Equals(expected) {
 		t.Errorf("Expected %v, but got %v", expected, s)
 	}
 
 	// Test adding duplicates
 	s.Add(1, 2)
-	expected = NewSet[int](1, 2, 3)
+	expected = NewSet(1, 2, 3)
 	if !s.Equals(expected) {
 		t.Errorf("Expected %v, but got %v", expected, s)
 	}
 }
 
 func TestSet_Remove(t *testing.T) {
-	s := NewSet[int](1, 2, 3)
+	s := NewSet(1, 2, 3)
 	s.Remove(2)
 
-	expected := NewSet[int](1, 3)
+	expected := NewSet(1, 3)
 	if !s.Equals(expected) {
 		t.Errorf("Expected %v, but got %v", expected, s)
 	}

@@ -1,4 +1,4 @@
-package datatypes
+package collections
 
 type Stack[T comparable] struct {
 	elements []T
