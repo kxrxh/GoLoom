@@ -1,6 +1,5 @@
 package collections
 
-
 type Counter struct {
 	elements map[interface{}]uint64
 }
@@ -25,12 +24,25 @@ func CounterFromSlice[T comparable](elements []T) Counter {
 	return c
 }
 
+// FromString creates and returns a Counter from a given string.
+//
+// It takes a string parameter `s` and iterates over each element in the string,
+// incrementing the corresponding count in the Counter `c`.
+// The function returns the created Counter `c`.
+func FromString(s string) Counter {
+	c := NewCounter()
+	for _, e := range s {
+		c.elements[e]++
+	}
+	return c
+}
+
 // Add increments the count for each element in the provided variadic
 // slice.
 //
 // elems is a variadic slice of interface{} elements whose counts are
 // to be increased.
-func (c *Counter) Add(elems ...interface{}) {
+func (c *Counter) Add(elems ...any) {
 	for _, e := range elems {
 		c.elements[e]++
 	}
@@ -40,7 +52,7 @@ func (c *Counter) Add(elems ...interface{}) {
 //
 // Accepts a variadic number of interface{} elements to be removed.
 // Does not return any value.
-func (c *Counter) Remove(elems ...interface{}) {
+func (c *Counter) Remove(elems ...any) {
 	for _, e := range elems {
 		delete(c.elements, e)
 	}
@@ -53,7 +65,7 @@ func (c *Counter) Remove(elems ...interface{}) {
 // for presence in the Counter.
 // Returns true if all elements are present, otherwise
 // false.
-func (c *Counter) Contains(elems ...interface{}) bool {
+func (c *Counter) Contains(elems ...any) bool {
 	for _, e := range elems {
 		if _, ok := c.elements[e]; !ok {
 			return false
@@ -66,7 +78,7 @@ func (c *Counter) Contains(elems ...interface{}) bool {
 //
 // It does not take any parameters.
 // Returns a slice of interface{} containing all the elements.
-func (c Counter) ToSlice() []interface{} {
+func (c Counter) ToSlice() []any{
 	var elems []interface{}
 	for e := range c.elements {
 		elems = append(elems, e)

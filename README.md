@@ -15,5 +15,5 @@ It's a simple golang library, which provide different collections and useful fun
 - Result
 
 
-### Functions:
+### Functions and tools:
 - Retry 
